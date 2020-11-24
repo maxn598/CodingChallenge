@@ -40,12 +40,12 @@ public class Book {
      */
 	public boolean hasValidISBN() {
 		if(ISBN < 0){return false;}
-		int length = (int)Math.floor(Math.log10(ISBN)) + 1; //Länge der ISBN
+		int length = (int)Math.log10(ISBN) + 1; //Länge der ISBN
 		int[] ISBNArray = new int[length];	//Array aus einzelnen Zahlen der ISBN, um geziehlt auf jede Zahl zugreifen zu können
-		for(int i=1; i<=length; i++) {
-			ISBNArray[length - i] = (int)Math.floor( (ISBN % Math.pow(10, i)) * 10 / Math.pow(10.0, i) );
-		}
 		if( length == 13 && ISBNArray[0] == 9 && ISBNArray[1] == 7 && (ISBNArray[2] == 8 || ISBNArray[2] == 9) ) {	//ISBN-13 ist 13 Stellige Zahl, Präfix 978 oder 979
+			for(int i=1; i<=length; i++) {
+				ISBNArray[length - i] = (int)( (ISBN % Math.pow(10, i)) * 10 / Math.pow(10.0, i) );
+			}
 			int pruefzahl = 0;
 			for(int i = 0; i < 12; i++) { //Berechne die prüfziffer
 				if(i%2 == 0) {

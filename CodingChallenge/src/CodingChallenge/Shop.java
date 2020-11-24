@@ -54,7 +54,10 @@ public class Shop {
      * @return eine Liste aller Bücher des übergebenen Genres des Shops
      */
 	public List<Book> getBooks(String genre) {
-		List<Book> dummy = books;
+		List<Book> dummy = new LinkedList<Book>();
+		for(Book book : books) {
+			dummy.add(book);
+		}
 		for(int i=0; i<dummy.size(); i++)
 		{
 			if( ! dummy.get(i).getGenre().equals(genre) ) {
@@ -70,7 +73,10 @@ public class Shop {
      * @return eine dublikatfreie Liste aller Bücher des Shops
      */
 	public List<Book> getUniqueBooks() {
-		List<Book> dummy = books;
+		List<Book> dummy = new LinkedList<Book>();
+		for(Book book : books) {
+			dummy.add(book);
+		}
 		for(int i=0; i<dummy.size(); i++)
 		{
 			for(int j=i+1; j<dummy.size(); j++)
@@ -108,6 +114,11 @@ public class Shop {
 	public boolean equals(Shop shop) {
 		for(Book book : books) {
 			if(!shop.getBooks().contains(book)) {
+				return false;
+			}
+		}
+		for(Book book : shop.getBooks()) {
+			if(!books.contains(book)) {
 				return false;
 			}
 		}
