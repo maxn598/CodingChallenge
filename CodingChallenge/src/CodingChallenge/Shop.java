@@ -56,13 +56,8 @@ public class Shop {
 	public List<Book> getBooks(String genre) {
 		List<Book> dummy = new LinkedList<Book>();
 		for(Book book : books) {
-			dummy.add(book);
-		}
-		for(int i=0; i<dummy.size(); i++)
-		{
-			if( ! dummy.get(i).getGenre().equals(genre) ) {
-				dummy.remove(i);
-			i--;
+			if( book.getGenre().equals(genre) ) {
+				dummy.add(book);
 			}
 		}
 		return dummy;
