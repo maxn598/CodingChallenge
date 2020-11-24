@@ -9,7 +9,7 @@ public class Book {
 	
 	public Book(String titel, double price, int pages, long ISBN, String genre) {
 		this.titel = titel;
-		this.price = Math.floor(price * 100) / 100.;
+		this.price = Math.floor(price * 100) / 100.0;
 		this.pages = pages;
 		this.ISBN = ISBN;
 		this.genre = genre;

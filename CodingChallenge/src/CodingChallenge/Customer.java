@@ -15,7 +15,7 @@ public class Customer {
 	public Customer(String name, double money) {
 		this.name = name;
 		books = new LinkedList<Book>();
-		this.money = Math.floor(money * 100) / 100.;
+		this.money = Math.floor(money * 100) / 100.0;
 	}
 	
 	/**
