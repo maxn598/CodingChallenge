@@ -6,6 +6,14 @@ public class Tester {//Klasse zum Modultesten
 		//Modultest-Methode einfügen (gewünschte Ausgabe in der jeweiligen Methode nachlesen)
 	}
 	
+	/**
+     * Testet den Verkauf eines Buches
+     *	Gewünschte Ausgabe:
+     *	Fehlermeldung Preis des Buches zu hoch
+     *	true
+     *	Fehlermeldung kein Buch im Shop gefunden
+     *	30.01
+     */
 	public static void testSell() {
 		Customer kunde = new Customer("Max Mustemann", 40);
 		Book buch1 = new Book("Ein verheißenes Land", 42, 1024, 9783328600626L, "Biography");
@@ -19,6 +27,11 @@ public class Tester {//Klasse zum Modultesten
 		System.out.println(kunde.getMoney()); //Wenn korrekt verkauft wurde hat der Kunde noch 30.01€
 	}
 	
+	/**
+     * Testet das Filtern nach Genre
+     *	Gewünschte Ausgabe:
+     *	Ausgabe des Buches "Ein Abenteuerbuch"
+     */
 	public static void testFilter() {
 		Book buch1 = new Book("Ein verheißenes Land", 42, 1024, 9783328600626L, "Biography");
 		Book buch2 = new Book("Ein Abenteuerbuch", 10, 10, 9783328600626L, "Adventure");
@@ -30,6 +43,12 @@ public class Tester {//Klasse zum Modultesten
 		}
 	}
 	
+	/**
+     * Testet das Entfernen von Duplikaten
+     *	Gewünschte Ausgabe:
+     *	Ausgabe des Buches "Ein verheißenes Land"
+     *	Ausgabe des Buches "Ein Abenteuerbuch"
+     */
 	public static void testDuplikate() {
 		Book buch1 = new Book("Ein verheißenes Land", 42, 1024, 9783328600626L, "Biography");
 		Book buch2 = new Book("Ein Abenteuerbuch", 10, 10, 9783328600626L, "Adventure");
@@ -42,6 +61,12 @@ public class Tester {//Klasse zum Modultesten
 		}
 	}
 	
+	/**
+     * Testet das Vergleichen zweier Shops
+     *	Gewünschte Ausgabe:
+     *	true
+     *	false
+     */
 	public static void testVergleich() {
 		Book buch1 = new Book("Ein verheißenes Land", 42, 1024, 9783328600626L, "Biography");
 		Book buch2 = new Book("Ein Abenteuerbuch", 10, 10, 9783328600626L, "Adventure");
@@ -59,6 +84,13 @@ public class Tester {//Klasse zum Modultesten
 		System.out.println(shop1.equals(shop2)); //sollte false ausgeben
 	}
 	
+	/**
+     * Testet das Hinzufügen zu einem Shop bzw. das Überprüfen auf korrekte ISBN
+     *	Gewünschte Ausgabe:
+     *	Ausgabe des Buches "Testbuch1"
+     *	Ausgabe des Buches "Testbuch2"
+     *	Ausgabe des Buches "Testbuch3"
+     */
 	public static void testHinzufügen() {
 		Book buch1 = new Book("Testbuch1", 42, 1024, 9783608963762L, "Adventure");
 		Book buch2 = new Book("Fehlerbuch Prüfziffer falsch", 42, 1024, 9783442267747L, "Adventure");
